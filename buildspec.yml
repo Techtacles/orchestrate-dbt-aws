@@ -1,0 +1,38 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      # Upgrade pip
+      - pip install --upgrade pip
+      # Install dbt
+      - pip install -r requirements.txt
+      # Install any other dependencies required for your dbt project (e.g., database drivers)
+      # - pip install psycopg2  # Example for PostgreSQL
+  pre_build:
+    commands:
+      # Fetch the parameter value from Parameter Store
+      - export DBT_HOST=$(aws ssm get-parameter --name DBT_HOST --query 'Parameter.Value' --output text)
+      - export DBT_USER=$(aws ssm get-parameter --name DBT_USER --query 'Parameter.Value' --output text)
+      - export DBT_PASSWORD=$(aws ssm get-parameter --name DBT_PASSWORD --query 'Parameter.Value' --output text)
+      - export DBT_DBNAME=$(aws ssm get-parameter --name DBT_DBNAME --query 'Parameter.Value' --output text)
+  
+  build:
+    commands:
+      # Set up the database connection configuration file
+      - mkdir userdata
+      - zip -r userdata/lambda_deployment.zip *
+      - python3 ./resources/create_lambda_triggers.py
+      - aws lambda update-function-code --function-name aws-dbt-poc-lambda --zip-file fileb://userdata/lambda_deployment.zip
+      - rm -rf userdata
+  
+      # Compile dbt models
+      - dbt seed --profiles-dir profiles
+      
+      # Run dbt models
+      - dbt run --profiles-dir profiles -m +$DBT_RUN_MODELS
+      
+      
+

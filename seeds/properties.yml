@@ -1,0 +1,11 @@
+version: 2
+
+
+seeds:
+ - name: bi_budget
+   config:
+     enabled: true
+     database: bi_budget_db
+     schema: bi_budget_schema
+     alias: bi_budget_table
+     full_refresh: true

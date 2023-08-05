@@ -1,0 +1,1668 @@
+
+
+============================== 2023-07-26 14:33:52.049342 | 4a2de721-7ac1-4145-b04b-82768c768513 ==============================
+[0m14:33:52.049342 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:33:52.051440 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/OFFISONG/Desktop/DATA2BOTS/d2b-orchestrate-aws-dbt/profiles', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'show': False, 'which': 'seed', 'rpc_method': 'seed', 'indirect_selection': 'eager'}
+[0m14:33:52.051683 [debug] [MainThread]: Tracking: tracking
+[0m14:33:52.086853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec29e8b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec29e8d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec29e8d30>]}
+[0m14:33:52.097115 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:33:52.097553 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:33:52.097801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4a2de721-7ac1-4145-b04b-82768c768513', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec29fe280>]}
+[0m14:33:52.516557 [debug] [MainThread]: 1699: static parser successfully parsed dev/promotional_team.sql
+[0m14:33:52.525012 [debug] [MainThread]: 1699: static parser successfully parsed dev/products_team.sql
+[0m14:33:52.527171 [debug] [MainThread]: 1699: static parser successfully parsed dev/products_promotional.sql
+[0m14:33:52.580356 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_first_dbt_model' in the 'models' section of file 'models/dev/schema.yml'
+[0m14:33:52.581652 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_second_dbt_model' in the 'models' section of file 'models/dev/schema.yml'
+[0m14:33:52.595497 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'bi_budget' in the 'seeds' section of file 'seeds/properties.yml'
+[0m14:33:52.596005 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.aws_orchestration.unique_my_first_dbt_model_id.16e066b321' (models/dev/schema.yml) depends on a node named 'my_first_dbt_model' in package '' which was not found
+[0m14:33:52.596298 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.aws_orchestration.not_null_my_first_dbt_model_id.5fb22c2710' (models/dev/schema.yml) depends on a node named 'my_first_dbt_model' in package '' which was not found
+[0m14:33:52.596563 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.aws_orchestration.unique_my_second_dbt_model_id.57a0f8c493' (models/dev/schema.yml) depends on a node named 'my_second_dbt_model' in package '' which was not found
+[0m14:33:52.596828 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.aws_orchestration.not_null_my_second_dbt_model_id.151b76d778' (models/dev/schema.yml) depends on a node named 'my_second_dbt_model' in package '' which was not found
+[0m14:33:52.611938 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.aws_orchestration.example
+[0m14:33:52.616065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4a2de721-7ac1-4145-b04b-82768c768513', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faeb8a63bb0>]}
+[0m14:33:52.622645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4a2de721-7ac1-4145-b04b-82768c768513', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faeb8a618b0>]}
+[0m14:33:52.623068 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics
+[0m14:33:52.623334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4a2de721-7ac1-4145-b04b-82768c768513', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faeb8a04af0>]}
+[0m14:33:52.624799 [info ] [MainThread]: 
+[0m14:33:52.627012 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:33:52.627968 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws'
+[0m14:33:52.637912 [debug] [ThreadPool]: Using postgres connection "list_dbtaws"
+[0m14:33:52.638300 [debug] [ThreadPool]: On list_dbtaws: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:33:52.638485 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:34:01.235628 [debug] [ThreadPool]: SQL status: SELECT 4 in 9 seconds
+[0m14:34:01.242107 [debug] [ThreadPool]: On list_dbtaws: Close
+[0m14:34:01.245881 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws_public'
+[0m14:34:01.256398 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:34:01.256787 [debug] [ThreadPool]: On list_dbtaws_public: BEGIN
+[0m14:34:01.257109 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:34:04.839773 [debug] [ThreadPool]: SQL status: BEGIN in 4 seconds
+[0m14:34:04.840228 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:34:04.840406 [debug] [ThreadPool]: On list_dbtaws_public: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws_public"} */
+select
+      'dbtaws' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dbtaws' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m14:34:05.242524 [debug] [ThreadPool]: SQL status: SELECT 0 in 0 seconds
+[0m14:34:05.247589 [debug] [ThreadPool]: On list_dbtaws_public: ROLLBACK
+[0m14:34:05.459705 [debug] [ThreadPool]: On list_dbtaws_public: Close
+[0m14:34:05.473131 [debug] [MainThread]: Using postgres connection "master"
+[0m14:34:05.473836 [debug] [MainThread]: On master: BEGIN
+[0m14:34:05.474275 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:34:09.358593 [debug] [MainThread]: SQL status: BEGIN in 4 seconds
+[0m14:34:09.359504 [debug] [MainThread]: Using postgres connection "master"
+[0m14:34:09.360088 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:34:09.979428 [debug] [MainThread]: SQL status: SELECT 0 in 1 seconds
+[0m14:34:09.984397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4a2de721-7ac1-4145-b04b-82768c768513', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec2bd0280>]}
+[0m14:34:09.985911 [debug] [MainThread]: On master: ROLLBACK
+[0m14:34:10.784944 [debug] [MainThread]: Using postgres connection "master"
+[0m14:34:10.786289 [debug] [MainThread]: On master: BEGIN
+[0m14:34:11.787744 [debug] [MainThread]: SQL status: BEGIN in 1 seconds
+[0m14:34:11.789836 [debug] [MainThread]: On master: COMMIT
+[0m14:34:11.791427 [debug] [MainThread]: Using postgres connection "master"
+[0m14:34:11.792008 [debug] [MainThread]: On master: COMMIT
+[0m14:34:12.006732 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:34:12.007711 [debug] [MainThread]: On master: Close
+[0m14:34:12.009471 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:34:12.010219 [info ] [MainThread]: 
+[0m14:34:12.017543 [debug] [Thread-1  ]: Began running node seed.aws_orchestration.bi_budget_csv
+[0m14:34:12.017995 [info ] [Thread-1  ]: 1 of 1 START seed file public.bi_budget_csv .................................... [RUN]
+[0m14:34:12.018689 [debug] [Thread-1  ]: Acquiring new postgres connection 'seed.aws_orchestration.bi_budget_csv'
+[0m14:34:12.018928 [debug] [Thread-1  ]: Began compiling node seed.aws_orchestration.bi_budget_csv
+[0m14:34:12.019164 [debug] [Thread-1  ]: Timing info for seed.aws_orchestration.bi_budget_csv (compile): 2023-07-26 14:34:12.019106 => 2023-07-26 14:34:12.019110
+[0m14:34:12.019394 [debug] [Thread-1  ]: Began executing node seed.aws_orchestration.bi_budget_csv
+[0m14:34:12.885647 [debug] [Thread-1  ]: Using postgres connection "seed.aws_orchestration.bi_budget_csv"
+[0m14:34:12.886145 [debug] [Thread-1  ]: On seed.aws_orchestration.bi_budget_csv: BEGIN
+[0m14:34:12.886378 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:34:16.612317 [debug] [Thread-1  ]: SQL status: BEGIN in 4 seconds
+[0m14:34:16.613606 [debug] [Thread-1  ]: Using postgres connection "seed.aws_orchestration.bi_budget_csv"
+[0m14:34:16.614146 [debug] [Thread-1  ]: On seed.aws_orchestration.bi_budget_csv: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "seed.aws_orchestration.bi_budget_csv"} */
+
+    create table "dbtaws"."public"."bi_budget_csv" ("a" integer,"date" text,"label_id" integer,"team" text,"category" text,"channel" integer,"platform" integer,"salesmethod" integer,"type" text,"target_department" text,"margin" float8,"orders" float8,"bids" float8,"sessions" float8,"registrations" float8,"margin_admin" integer,"margin_fixed_fee" integer,"margin_commission" integer,"ub" integer)
+  
+[0m14:34:17.796527 [debug] [Thread-1  ]: SQL status: CREATE TABLE in 1 seconds
+[0m14:34:49.535694 [debug] [Thread-1  ]: Using postgres connection "seed.aws_orchestration.bi_budget_csv"
+[0m14:34:49.537123 [debug] [Thread-1  ]: On seed.aws_orchestration.bi_budget_csv: 
+          insert into "dbtaws"."public"."bi_budget_csv" ("a", "date", "label_id", "team", "category", "channel", "platform", "salesmethod", "type", "target_department", "margin", "orders", "bids", "sessions", "registrations", "margin_admin", "margin_fixed_fee", "margin_commission", "ub") values
+          (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,...
+[0m14:34:51.917883 [debug] [Thread-1  ]: SQL status: INSERT 0 8145 in 2 seconds
+[0m14:34:51.938045 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.aws_orchestration.bi_budget_csv"
+[0m14:34:51.966947 [debug] [Thread-1  ]: On seed.aws_orchestration.bi_budget_csv: COMMIT
+[0m14:34:51.967225 [debug] [Thread-1  ]: Using postgres connection "seed.aws_orchestration.bi_budget_csv"
+[0m14:34:51.967435 [debug] [Thread-1  ]: On seed.aws_orchestration.bi_budget_csv: COMMIT
+[0m14:34:52.610314 [debug] [Thread-1  ]: SQL status: COMMIT in 1 seconds
+[0m14:34:52.620667 [debug] [Thread-1  ]: Timing info for seed.aws_orchestration.bi_budget_csv (execute): 2023-07-26 14:34:12.019549 => 2023-07-26 14:34:52.620413
+[0m14:34:52.621347 [debug] [Thread-1  ]: On seed.aws_orchestration.bi_budget_csv: Close
+[0m14:34:52.632281 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4a2de721-7ac1-4145-b04b-82768c768513', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faeb04fdc40>]}
+[0m14:34:52.634716 [info ] [Thread-1  ]: 1 of 1 OK loaded seed file public.bi_budget_csv ................................ [[32mINSERT 8145[0m in 40.61s]
+[0m14:34:52.640555 [debug] [Thread-1  ]: Finished running node seed.aws_orchestration.bi_budget_csv
+[0m14:34:52.645666 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:34:52.646201 [debug] [MainThread]: Using postgres connection "master"
+[0m14:34:52.646512 [debug] [MainThread]: On master: BEGIN
+[0m14:34:52.646804 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:34:59.649269 [debug] [MainThread]: SQL status: BEGIN in 7 seconds
+[0m14:34:59.652403 [debug] [MainThread]: On master: COMMIT
+[0m14:34:59.653430 [debug] [MainThread]: Using postgres connection "master"
+[0m14:34:59.654329 [debug] [MainThread]: On master: COMMIT
+[0m14:35:00.165436 [debug] [MainThread]: SQL status: COMMIT in 1 seconds
+[0m14:35:00.167525 [debug] [MainThread]: On master: Close
+[0m14:35:00.170918 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:35:00.171549 [debug] [MainThread]: Connection 'seed.aws_orchestration.bi_budget_csv' was properly closed.
+[0m14:35:00.172248 [info ] [MainThread]: 
+[0m14:35:00.173091 [info ] [MainThread]: Finished running 1 seed in 0 hours 1 minutes and 7.55 seconds (67.55s).
+[0m14:35:00.174024 [debug] [MainThread]: Command end result
+[0m14:35:00.188876 [info ] [MainThread]: 
+[0m14:35:00.189669 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:35:00.190239 [info ] [MainThread]: 
+[0m14:35:00.190710 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m14:35:00.191306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faec2b63730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faeb8a7c670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faeb8a7c880>]}
+[0m14:35:00.191764 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-26 14:37:56.323902 | d930d023-e4ab-425d-a0c3-caad42b21d54 ==============================
+[0m14:37:56.323902 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:37:56.325800 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/OFFISONG/Desktop/DATA2BOTS/d2b-orchestrate-aws-dbt/profiles', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:37:56.326001 [debug] [MainThread]: Tracking: tracking
+[0m14:37:56.378203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9c096f0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9c1c6f220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9c1c93a90>]}
+[0m14:37:56.387590 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:37:56.414902 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:37:56.415112 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:37:56.415710 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.aws_orchestration.example
+[0m14:37:56.420984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd930d023-e4ab-425d-a0c3-caad42b21d54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9b14240d0>]}
+[0m14:37:56.426222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd930d023-e4ab-425d-a0c3-caad42b21d54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9a07d61c0>]}
+[0m14:37:56.426468 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics
+[0m14:37:56.426700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd930d023-e4ab-425d-a0c3-caad42b21d54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9a07d6130>]}
+[0m14:37:56.427858 [info ] [MainThread]: 
+[0m14:37:56.429141 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:37:56.430023 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws'
+[0m14:37:56.438378 [debug] [ThreadPool]: Using postgres connection "list_dbtaws"
+[0m14:37:56.438639 [debug] [ThreadPool]: On list_dbtaws: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:37:56.438795 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:38:02.236437 [debug] [ThreadPool]: SQL status: SELECT 4 in 6 seconds
+[0m14:38:02.241460 [debug] [ThreadPool]: On list_dbtaws: Close
+[0m14:38:02.244991 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws_public'
+[0m14:38:02.250631 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:38:02.250930 [debug] [ThreadPool]: On list_dbtaws_public: BEGIN
+[0m14:38:02.251108 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:38:05.295662 [debug] [ThreadPool]: SQL status: BEGIN in 3 seconds
+[0m14:38:05.298242 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:38:05.299269 [debug] [ThreadPool]: On list_dbtaws_public: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws_public"} */
+select
+      'dbtaws' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dbtaws' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m14:38:05.956510 [debug] [ThreadPool]: SQL status: SELECT 1 in 1 seconds
+[0m14:38:05.964075 [debug] [ThreadPool]: On list_dbtaws_public: ROLLBACK
+[0m14:38:06.745344 [debug] [ThreadPool]: On list_dbtaws_public: Close
+[0m14:38:06.763573 [debug] [MainThread]: Using postgres connection "master"
+[0m14:38:06.764140 [debug] [MainThread]: On master: BEGIN
+[0m14:38:06.764501 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:38:11.262312 [debug] [MainThread]: SQL status: BEGIN in 4 seconds
+[0m14:38:11.264977 [debug] [MainThread]: Using postgres connection "master"
+[0m14:38:11.265970 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:38:11.498293 [debug] [MainThread]: SQL status: SELECT 0 in 0 seconds
+[0m14:38:11.503548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd930d023-e4ab-425d-a0c3-caad42b21d54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9a0675f70>]}
+[0m14:38:11.571855 [debug] [MainThread]: On master: ROLLBACK
+[0m14:38:12.552763 [debug] [MainThread]: Using postgres connection "master"
+[0m14:38:12.555567 [debug] [MainThread]: On master: BEGIN
+[0m14:38:14.881572 [debug] [MainThread]: SQL status: BEGIN in 2 seconds
+[0m14:38:14.883195 [debug] [MainThread]: On master: COMMIT
+[0m14:38:14.884002 [debug] [MainThread]: Using postgres connection "master"
+[0m14:38:14.884592 [debug] [MainThread]: On master: COMMIT
+[0m14:38:15.098743 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:38:15.100985 [debug] [MainThread]: On master: Close
+[0m14:38:15.104568 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:38:15.105916 [info ] [MainThread]: 
+[0m14:38:15.119442 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_team
+[0m14:38:15.120216 [info ] [Thread-1  ]: 1 of 3 START sql view model public.products_team ............................... [RUN]
+[0m14:38:15.122276 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_team'
+[0m14:38:15.122779 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_team
+[0m14:38:15.129424 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_team"
+[0m14:38:15.130666 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (compile): 2023-07-26 14:38:15.123108 => 2023-07-26 14:38:15.130534
+[0m14:38:15.131091 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_team
+[0m14:38:15.184124 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_team"
+[0m14:38:15.186721 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:38:15.186995 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: BEGIN
+[0m14:38:15.187172 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:38:18.104485 [debug] [Thread-1  ]: SQL status: BEGIN in 3 seconds
+[0m14:38:18.107907 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:38:18.108421 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+
+  create view "dbtaws"."public"."products_team__dbt_tmp" as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with products_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team="Products"
+
+)
+
+select * from products_team
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+[0m14:38:18.392291 [debug] [Thread-1  ]: Postgres adapter: Postgres error: column "Products" does not exist
+LINE 16: ...from "dbtaws"."public"."bi_budget_csv" where team="Products"
+                                                              ^
+
+[0m14:38:18.394934 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: ROLLBACK
+[0m14:38:18.646338 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (execute): 2023-07-26 14:38:15.131341 => 2023-07-26 14:38:18.644811
+[0m14:38:18.648119 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: Close
+[0m14:38:18.662282 [debug] [Thread-1  ]: Database Error in model products_team (models/dev/products_team.sql)
+  column "Products" does not exist
+  LINE 16: ...from "dbtaws"."public"."bi_budget_csv" where team="Products"
+                                                                ^
+  compiled Code at target/run/aws_orchestration/models/dev/products_team.sql
+[0m14:38:18.663839 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd930d023-e4ab-425d-a0c3-caad42b21d54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9a088d1c0>]}
+[0m14:38:18.666814 [error] [Thread-1  ]: 1 of 3 ERROR creating sql view model public.products_team ...................... [[31mERROR[0m in 3.54s]
+[0m14:38:18.671760 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_team
+[0m14:38:18.672571 [debug] [Thread-1  ]: Began running node model.aws_orchestration.promotional_team
+[0m14:38:18.674557 [info ] [Thread-1  ]: 2 of 3 START sql view model public.promotional_team ............................ [RUN]
+[0m14:38:18.675837 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.promotional_team'
+[0m14:38:18.676292 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.promotional_team
+[0m14:38:18.683891 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.promotional_team"
+[0m14:38:18.685439 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (compile): 2023-07-26 14:38:18.676568 => 2023-07-26 14:38:18.685367
+[0m14:38:18.685749 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.promotional_team
+[0m14:38:18.693436 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.promotional_team"
+[0m14:38:18.694136 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:38:18.694359 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: BEGIN
+[0m14:38:18.694560 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:38:22.191077 [debug] [Thread-1  ]: SQL status: BEGIN in 3 seconds
+[0m14:38:22.193017 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:38:22.193866 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+
+  create view "dbtaws"."public"."promotional_team__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+
+
+
+with promotional_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team="Promotional"
+
+)
+
+select * from promotional_team
+  );
+[0m14:38:22.436071 [debug] [Thread-1  ]: Postgres adapter: Postgres error: column "Promotional" does not exist
+LINE 11: ...from "dbtaws"."public"."bi_budget_csv" where team="Promotion...
+                                                              ^
+
+[0m14:38:22.437968 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: ROLLBACK
+[0m14:38:22.661035 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (execute): 2023-07-26 14:38:18.685949 => 2023-07-26 14:38:22.660429
+[0m14:38:22.662833 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: Close
+[0m14:38:22.667116 [debug] [Thread-1  ]: Database Error in model promotional_team (models/dev/promotional_team.sql)
+  column "Promotional" does not exist
+  LINE 11: ...from "dbtaws"."public"."bi_budget_csv" where team="Promotion...
+                                                                ^
+  compiled Code at target/run/aws_orchestration/models/dev/promotional_team.sql
+[0m14:38:22.668398 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd930d023-e4ab-425d-a0c3-caad42b21d54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9b147e310>]}
+[0m14:38:22.669806 [error] [Thread-1  ]: 2 of 3 ERROR creating sql view model public.promotional_team ................... [[31mERROR[0m in 3.99s]
+[0m14:38:22.671540 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.promotional_team
+[0m14:38:22.674259 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_promotional
+[0m14:38:22.674963 [info ] [Thread-1  ]: 3 of 3 SKIP relation public.products_promotional ............................... [[33mSKIP[0m]
+[0m14:38:22.675765 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_promotional
+[0m14:38:22.679091 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:38:22.680441 [debug] [MainThread]: Using postgres connection "master"
+[0m14:38:22.681405 [debug] [MainThread]: On master: BEGIN
+[0m14:38:22.682177 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:38:28.855502 [debug] [MainThread]: SQL status: BEGIN in 6 seconds
+[0m14:38:28.857573 [debug] [MainThread]: On master: COMMIT
+[0m14:38:28.858708 [debug] [MainThread]: Using postgres connection "master"
+[0m14:38:28.859644 [debug] [MainThread]: On master: COMMIT
+[0m14:38:29.089177 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:38:29.091362 [debug] [MainThread]: On master: Close
+[0m14:38:29.094439 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:38:29.095125 [debug] [MainThread]: Connection 'model.aws_orchestration.promotional_team' was properly closed.
+[0m14:38:29.095865 [info ] [MainThread]: 
+[0m14:38:29.096760 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 32.67 seconds (32.67s).
+[0m14:38:29.098660 [debug] [MainThread]: Command end result
+[0m14:38:29.111911 [info ] [MainThread]: 
+[0m14:38:29.112728 [info ] [MainThread]: [31mCompleted with 2 errors and 0 warnings:[0m
+[0m14:38:29.113362 [info ] [MainThread]: 
+[0m14:38:29.113939 [error] [MainThread]: [33mDatabase Error in model products_team (models/dev/products_team.sql)[0m
+[0m14:38:29.114425 [error] [MainThread]:   column "Products" does not exist
+[0m14:38:29.114856 [error] [MainThread]:   LINE 16: ...from "dbtaws"."public"."bi_budget_csv" where team="Products"
+[0m14:38:29.115266 [error] [MainThread]:                                                                 ^
+[0m14:38:29.115675 [error] [MainThread]:   compiled Code at target/run/aws_orchestration/models/dev/products_team.sql
+[0m14:38:29.116087 [info ] [MainThread]: 
+[0m14:38:29.116625 [error] [MainThread]: [33mDatabase Error in model promotional_team (models/dev/promotional_team.sql)[0m
+[0m14:38:29.117148 [error] [MainThread]:   column "Promotional" does not exist
+[0m14:38:29.117664 [error] [MainThread]:   LINE 11: ...from "dbtaws"."public"."bi_budget_csv" where team="Promotion...
+[0m14:38:29.118156 [error] [MainThread]:                                                                 ^
+[0m14:38:29.118715 [error] [MainThread]:   compiled Code at target/run/aws_orchestration/models/dev/promotional_team.sql
+[0m14:38:29.119261 [info ] [MainThread]: 
+[0m14:38:29.119782 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=1 TOTAL=3
+[0m14:38:29.120648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9b1424f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9b146e460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9a088fcd0>]}
+[0m14:38:29.121219 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-26 14:42:04.495684 | cec74a14-9be9-46f4-bb1a-49ff7d9da9a6 ==============================
+[0m14:42:04.495684 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:42:04.498142 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/OFFISONG/Desktop/DATA2BOTS/d2b-orchestrate-aws-dbt/profiles', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:42:04.498398 [debug] [MainThread]: Tracking: tracking
+[0m14:42:04.527469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff36274fcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff362813ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff36284cac0>]}
+[0m14:42:04.538109 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:42:04.577143 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m14:42:04.577542 [debug] [MainThread]: Partial parsing: updated file: aws_orchestration://models/dev/promotional_team.sql
+[0m14:42:04.577747 [debug] [MainThread]: Partial parsing: updated file: aws_orchestration://models/dev/products_team.sql
+[0m14:42:04.589165 [debug] [MainThread]: 1699: static parser successfully parsed dev/promotional_team.sql
+[0m14:42:04.598470 [debug] [MainThread]: 1699: static parser successfully parsed dev/products_team.sql
+[0m14:42:04.604365 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.aws_orchestration.example
+[0m14:42:04.608383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cec74a14-9be9-46f4-bb1a-49ff7d9da9a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff362af10d0>]}
+[0m14:42:04.614737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cec74a14-9be9-46f4-bb1a-49ff7d9da9a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3628da160>]}
+[0m14:42:04.615091 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics
+[0m14:42:04.615329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cec74a14-9be9-46f4-bb1a-49ff7d9da9a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3628da100>]}
+[0m14:42:04.616369 [info ] [MainThread]: 
+[0m14:42:04.617723 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:42:04.618655 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws'
+[0m14:42:04.626416 [debug] [ThreadPool]: Using postgres connection "list_dbtaws"
+[0m14:42:04.626612 [debug] [ThreadPool]: On list_dbtaws: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:42:04.626772 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:42:11.840435 [debug] [ThreadPool]: SQL status: SELECT 4 in 7 seconds
+[0m14:42:11.846941 [debug] [ThreadPool]: On list_dbtaws: Close
+[0m14:42:11.851058 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws_public'
+[0m14:42:11.856376 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:42:11.856668 [debug] [ThreadPool]: On list_dbtaws_public: BEGIN
+[0m14:42:11.856830 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:42:14.491869 [debug] [ThreadPool]: SQL status: BEGIN in 3 seconds
+[0m14:42:14.493341 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:42:14.494317 [debug] [ThreadPool]: On list_dbtaws_public: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws_public"} */
+select
+      'dbtaws' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dbtaws' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m14:42:14.734082 [debug] [ThreadPool]: SQL status: SELECT 1 in 0 seconds
+[0m14:42:14.738908 [debug] [ThreadPool]: On list_dbtaws_public: ROLLBACK
+[0m14:42:14.960494 [debug] [ThreadPool]: On list_dbtaws_public: Close
+[0m14:42:14.977291 [debug] [MainThread]: Using postgres connection "master"
+[0m14:42:14.978020 [debug] [MainThread]: On master: BEGIN
+[0m14:42:14.978473 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:42:17.000183 [debug] [MainThread]: SQL status: BEGIN in 2 seconds
+[0m14:42:17.001522 [debug] [MainThread]: Using postgres connection "master"
+[0m14:42:17.002236 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:42:17.244638 [debug] [MainThread]: SQL status: SELECT 0 in 0 seconds
+[0m14:42:17.250979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cec74a14-9be9-46f4-bb1a-49ff7d9da9a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3500e9910>]}
+[0m14:42:17.252036 [debug] [MainThread]: On master: ROLLBACK
+[0m14:42:17.461605 [debug] [MainThread]: Using postgres connection "master"
+[0m14:42:17.463137 [debug] [MainThread]: On master: BEGIN
+[0m14:42:18.188241 [debug] [MainThread]: SQL status: BEGIN in 1 seconds
+[0m14:42:18.190482 [debug] [MainThread]: On master: COMMIT
+[0m14:42:18.191598 [debug] [MainThread]: Using postgres connection "master"
+[0m14:42:18.192617 [debug] [MainThread]: On master: COMMIT
+[0m14:42:18.405730 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:42:18.407405 [debug] [MainThread]: On master: Close
+[0m14:42:18.409739 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:42:18.410656 [info ] [MainThread]: 
+[0m14:42:18.417237 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_team
+[0m14:42:18.419064 [info ] [Thread-1  ]: 1 of 3 START sql view model public.products_team ............................... [RUN]
+[0m14:42:18.421426 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_team'
+[0m14:42:18.421742 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_team
+[0m14:42:18.424611 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_team"
+[0m14:42:18.425496 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (compile): 2023-07-26 14:42:18.421920 => 2023-07-26 14:42:18.425372
+[0m14:42:18.425720 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_team
+[0m14:42:18.462829 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_team"
+[0m14:42:18.463957 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:42:18.464166 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: BEGIN
+[0m14:42:18.464321 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:42:22.556480 [debug] [Thread-1  ]: SQL status: BEGIN in 4 seconds
+[0m14:42:22.559034 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:42:22.559956 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+
+  create view "dbtaws"."public"."products_team__dbt_tmp" as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with products_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team = 'Products'
+
+)
+
+select * from products_team
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+[0m14:42:24.193737 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 2 seconds
+[0m14:42:24.216053 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:42:24.216645 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+alter table "dbtaws"."public"."products_team__dbt_tmp" rename to "products_team"
+[0m14:42:25.036746 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 1 seconds
+[0m14:42:25.073939 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: COMMIT
+[0m14:42:25.074409 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:42:25.074653 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: COMMIT
+[0m14:42:25.299484 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m14:42:25.313032 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:42:25.313233 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+drop view if exists "dbtaws"."public"."products_team__dbt_backup" cascade
+[0m14:42:25.545314 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m14:42:25.558149 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (execute): 2023-07-26 14:42:18.425845 => 2023-07-26 14:42:25.553660
+[0m14:42:25.559754 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: Close
+[0m14:42:25.564655 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cec74a14-9be9-46f4-bb1a-49ff7d9da9a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff35010ec40>]}
+[0m14:42:25.569919 [info ] [Thread-1  ]: 1 of 3 OK created sql view model public.products_team .......................... [[32mCREATE VIEW[0m in 7.14s]
+[0m14:42:25.574343 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_team
+[0m14:42:25.575226 [debug] [Thread-1  ]: Began running node model.aws_orchestration.promotional_team
+[0m14:42:25.576125 [info ] [Thread-1  ]: 2 of 3 START sql view model public.promotional_team ............................ [RUN]
+[0m14:42:25.577285 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.promotional_team'
+[0m14:42:25.577785 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.promotional_team
+[0m14:42:25.582738 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.promotional_team"
+[0m14:42:25.583721 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (compile): 2023-07-26 14:42:25.578050 => 2023-07-26 14:42:25.583638
+[0m14:42:25.584154 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.promotional_team
+[0m14:42:25.590140 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.promotional_team"
+[0m14:42:25.590857 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:42:25.591121 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: BEGIN
+[0m14:42:25.591414 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:42:29.327636 [debug] [Thread-1  ]: SQL status: BEGIN in 4 seconds
+[0m14:42:29.328574 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:42:29.329217 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+
+  create view "dbtaws"."public"."promotional_team__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+
+
+
+with promotional_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team='Promotional'
+
+)
+
+select * from promotional_team
+  );
+[0m14:42:29.899197 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 1 seconds
+[0m14:42:29.910534 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:42:29.911186 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+alter table "dbtaws"."public"."promotional_team__dbt_tmp" rename to "promotional_team"
+[0m14:42:30.566038 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 1 seconds
+[0m14:42:30.576202 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: COMMIT
+[0m14:42:30.576775 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:42:30.577262 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: COMMIT
+[0m14:42:30.863102 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m14:42:30.873445 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:42:30.874079 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+drop view if exists "dbtaws"."public"."promotional_team__dbt_backup" cascade
+[0m14:42:31.151600 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m14:42:31.158450 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (execute): 2023-07-26 14:42:25.584421 => 2023-07-26 14:42:31.158207
+[0m14:42:31.159370 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: Close
+[0m14:42:31.161803 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cec74a14-9be9-46f4-bb1a-49ff7d9da9a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff35010ec10>]}
+[0m14:42:31.163051 [info ] [Thread-1  ]: 2 of 3 OK created sql view model public.promotional_team ....................... [[32mCREATE VIEW[0m in 5.58s]
+[0m14:42:31.164078 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.promotional_team
+[0m14:42:31.167230 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_promotional
+[0m14:42:31.168145 [info ] [Thread-1  ]: 3 of 3 START sql table model public.products_promotional ....................... [RUN]
+[0m14:42:31.169599 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_promotional'
+[0m14:42:31.170086 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_promotional
+[0m14:42:31.176549 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_promotional"
+[0m14:42:31.177563 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (compile): 2023-07-26 14:42:31.170407 => 2023-07-26 14:42:31.177470
+[0m14:42:31.178012 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_promotional
+[0m14:42:31.202270 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_promotional"
+[0m14:42:31.202739 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:42:31.202873 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: BEGIN
+[0m14:42:31.202997 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:42:33.813376 [debug] [Thread-1  ]: SQL status: BEGIN in 3 seconds
+[0m14:42:33.816560 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:42:33.817467 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_promotional"} */
+
+  
+    
+
+  create  table "dbtaws"."public"."products_promotional__dbt_tmp"
+  as (
+    
+with products_promotional as (
+    select * from "dbtaws"."public"."products_team" products 
+    union
+    "dbtaws"."public"."promotional_team" promotional 
+
+)
+  );
+  
+[0m14:42:34.048728 [debug] [Thread-1  ]: Postgres adapter: Postgres error: syntax error at or near ""dbtaws""
+LINE 12:     "dbtaws"."public"."promotional_team" promotional 
+             ^
+
+[0m14:42:34.050845 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: ROLLBACK
+[0m14:42:34.281173 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (execute): 2023-07-26 14:42:31.178276 => 2023-07-26 14:42:34.280732
+[0m14:42:34.282623 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: Close
+[0m14:42:34.297175 [debug] [Thread-1  ]: Database Error in model products_promotional (models/dev/products_promotional.sql)
+  syntax error at or near ""dbtaws""
+  LINE 12:     "dbtaws"."public"."promotional_team" promotional 
+               ^
+  compiled Code at target/run/aws_orchestration/models/dev/products_promotional.sql
+[0m14:42:34.298064 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cec74a14-9be9-46f4-bb1a-49ff7d9da9a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3400112b0>]}
+[0m14:42:34.298900 [error] [Thread-1  ]: 3 of 3 ERROR creating sql table model public.products_promotional .............. [[31mERROR[0m in 3.13s]
+[0m14:42:34.299720 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_promotional
+[0m14:42:34.302343 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:42:34.302971 [debug] [MainThread]: Using postgres connection "master"
+[0m14:42:34.303407 [debug] [MainThread]: On master: BEGIN
+[0m14:42:34.303813 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:42:38.146103 [debug] [MainThread]: SQL status: BEGIN in 4 seconds
+[0m14:42:38.147291 [debug] [MainThread]: On master: COMMIT
+[0m14:42:38.147762 [debug] [MainThread]: Using postgres connection "master"
+[0m14:42:38.148208 [debug] [MainThread]: On master: COMMIT
+[0m14:42:38.777591 [debug] [MainThread]: SQL status: COMMIT in 1 seconds
+[0m14:42:38.779897 [debug] [MainThread]: On master: Close
+[0m14:42:38.785340 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:42:38.786125 [debug] [MainThread]: Connection 'model.aws_orchestration.products_promotional' was properly closed.
+[0m14:42:38.788397 [info ] [MainThread]: 
+[0m14:42:38.790120 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 34.17 seconds (34.17s).
+[0m14:42:38.792585 [debug] [MainThread]: Command end result
+[0m14:42:38.871421 [info ] [MainThread]: 
+[0m14:42:38.871744 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m14:42:38.872032 [info ] [MainThread]: 
+[0m14:42:38.872243 [error] [MainThread]: [33mDatabase Error in model products_promotional (models/dev/products_promotional.sql)[0m
+[0m14:42:38.872432 [error] [MainThread]:   syntax error at or near ""dbtaws""
+[0m14:42:38.872611 [error] [MainThread]:   LINE 12:     "dbtaws"."public"."promotional_team" promotional 
+[0m14:42:38.872782 [error] [MainThread]:                ^
+[0m14:42:38.872954 [error] [MainThread]:   compiled Code at target/run/aws_orchestration/models/dev/products_promotional.sql
+[0m14:42:38.873134 [info ] [MainThread]: 
+[0m14:42:38.873319 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
+[0m14:42:38.873558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff361e04c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff361e68730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff361e1d1f0>]}
+[0m14:42:38.873752 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-26 14:44:37.300681 | 1b1e5006-01b7-406b-9960-1f86f8cd22ed ==============================
+[0m14:44:37.300681 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:44:37.303274 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/OFFISONG/Desktop/DATA2BOTS/d2b-orchestrate-aws-dbt/profiles', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:44:37.303507 [debug] [MainThread]: Tracking: tracking
+[0m14:44:37.357759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabadd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabbe0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabbe0a0>]}
+[0m14:44:37.367479 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:44:37.394498 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:44:37.394895 [debug] [MainThread]: Partial parsing: updated file: aws_orchestration://models/dev/products_promotional.sql
+[0m14:44:37.407056 [debug] [MainThread]: 1699: static parser successfully parsed dev/products_promotional.sql
+[0m14:44:37.419298 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.aws_orchestration.example
+[0m14:44:37.423333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1b1e5006-01b7-406b-9960-1f86f8cd22ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78e87e10d0>]}
+[0m14:44:37.429229 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1b1e5006-01b7-406b-9960-1f86f8cd22ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabfa190>]}
+[0m14:44:37.429607 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics
+[0m14:44:37.429875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b1e5006-01b7-406b-9960-1f86f8cd22ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabfa100>]}
+[0m14:44:37.431130 [info ] [MainThread]: 
+[0m14:44:37.432453 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:44:37.433366 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws'
+[0m14:44:37.440949 [debug] [ThreadPool]: Using postgres connection "list_dbtaws"
+[0m14:44:37.441135 [debug] [ThreadPool]: On list_dbtaws: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:44:37.441295 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:44:42.579032 [debug] [ThreadPool]: SQL status: SELECT 4 in 5 seconds
+[0m14:44:42.587818 [debug] [ThreadPool]: On list_dbtaws: Close
+[0m14:44:42.594050 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws_public'
+[0m14:44:42.608070 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:44:42.608657 [debug] [ThreadPool]: On list_dbtaws_public: BEGIN
+[0m14:44:42.609025 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:44:46.301023 [debug] [ThreadPool]: SQL status: BEGIN in 4 seconds
+[0m14:44:46.304324 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:44:46.305099 [debug] [ThreadPool]: On list_dbtaws_public: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws_public"} */
+select
+      'dbtaws' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dbtaws' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m14:44:46.536136 [debug] [ThreadPool]: SQL status: SELECT 3 in 0 seconds
+[0m14:44:46.538744 [debug] [ThreadPool]: On list_dbtaws_public: ROLLBACK
+[0m14:44:46.768844 [debug] [ThreadPool]: On list_dbtaws_public: Close
+[0m14:44:46.787862 [debug] [MainThread]: Using postgres connection "master"
+[0m14:44:46.788469 [debug] [MainThread]: On master: BEGIN
+[0m14:44:46.788855 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:44:50.031035 [debug] [MainThread]: SQL status: BEGIN in 3 seconds
+[0m14:44:50.032977 [debug] [MainThread]: Using postgres connection "master"
+[0m14:44:50.033928 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:44:50.613106 [debug] [MainThread]: SQL status: SELECT 2 in 1 seconds
+[0m14:44:50.618228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b1e5006-01b7-406b-9960-1f86f8cd22ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78e88108e0>]}
+[0m14:44:50.619066 [debug] [MainThread]: On master: ROLLBACK
+[0m14:44:51.428492 [debug] [MainThread]: Using postgres connection "master"
+[0m14:44:51.430489 [debug] [MainThread]: On master: BEGIN
+[0m14:44:51.868627 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:44:51.870099 [debug] [MainThread]: On master: COMMIT
+[0m14:44:51.871053 [debug] [MainThread]: Using postgres connection "master"
+[0m14:44:51.871940 [debug] [MainThread]: On master: COMMIT
+[0m14:44:52.614530 [debug] [MainThread]: SQL status: COMMIT in 1 seconds
+[0m14:44:52.616088 [debug] [MainThread]: On master: Close
+[0m14:44:52.618269 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:44:52.619139 [info ] [MainThread]: 
+[0m14:44:52.626640 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_team
+[0m14:44:52.627127 [info ] [Thread-1  ]: 1 of 3 START sql view model public.products_team ............................... [RUN]
+[0m14:44:52.627782 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_team'
+[0m14:44:52.628012 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_team
+[0m14:44:52.631930 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_team"
+[0m14:44:52.633095 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (compile): 2023-07-26 14:44:52.628184 => 2023-07-26 14:44:52.632957
+[0m14:44:52.633378 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_team
+[0m14:44:52.664973 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_team"
+[0m14:44:52.665499 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:44:52.665656 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: BEGIN
+[0m14:44:52.665804 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:44:56.733523 [debug] [Thread-1  ]: SQL status: BEGIN in 4 seconds
+[0m14:44:56.735568 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:44:56.736440 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+
+  create view "dbtaws"."public"."products_team__dbt_tmp" as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with products_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team = 'Products'
+
+)
+
+select * from products_team
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+[0m14:44:57.401646 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 1 seconds
+[0m14:44:57.414404 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:44:57.414890 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+alter table "dbtaws"."public"."products_team" rename to "products_team__dbt_backup"
+[0m14:44:57.651560 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:44:57.665365 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:44:57.666053 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+alter table "dbtaws"."public"."products_team__dbt_tmp" rename to "products_team"
+[0m14:44:58.401032 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 1 seconds
+[0m14:44:58.442082 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: COMMIT
+[0m14:44:58.442633 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:44:58.442914 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: COMMIT
+[0m14:44:58.667971 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m14:44:58.674936 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:44:58.675258 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+drop view if exists "dbtaws"."public"."products_team__dbt_backup" cascade
+[0m14:44:59.482244 [debug] [Thread-1  ]: SQL status: DROP VIEW in 1 seconds
+[0m14:44:59.488457 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (execute): 2023-07-26 14:44:52.633539 => 2023-07-26 14:44:59.488244
+[0m14:44:59.489495 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: Close
+[0m14:44:59.491964 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b1e5006-01b7-406b-9960-1f86f8cd22ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fadfe190>]}
+[0m14:44:59.495542 [info ] [Thread-1  ]: 1 of 3 OK created sql view model public.products_team .......................... [[32mCREATE VIEW[0m in 6.86s]
+[0m14:44:59.499029 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_team
+[0m14:44:59.499733 [debug] [Thread-1  ]: Began running node model.aws_orchestration.promotional_team
+[0m14:44:59.500484 [info ] [Thread-1  ]: 2 of 3 START sql view model public.promotional_team ............................ [RUN]
+[0m14:44:59.501723 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.promotional_team'
+[0m14:44:59.502187 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.promotional_team
+[0m14:44:59.507710 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.promotional_team"
+[0m14:44:59.508614 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (compile): 2023-07-26 14:44:59.502501 => 2023-07-26 14:44:59.508524
+[0m14:44:59.509024 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.promotional_team
+[0m14:44:59.516805 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.promotional_team"
+[0m14:44:59.517713 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:44:59.518015 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: BEGIN
+[0m14:44:59.518279 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:45:04.783185 [debug] [Thread-1  ]: SQL status: BEGIN in 5 seconds
+[0m14:45:04.784915 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:45:04.785803 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+
+  create view "dbtaws"."public"."promotional_team__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+
+
+
+with promotional_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team='Promotional'
+
+)
+
+select * from promotional_team
+  );
+[0m14:45:05.050687 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m14:45:05.062179 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:45:05.062812 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+alter table "dbtaws"."public"."promotional_team" rename to "promotional_team__dbt_backup"
+[0m14:45:05.429111 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:45:05.441403 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:45:05.441950 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+alter table "dbtaws"."public"."promotional_team__dbt_tmp" rename to "promotional_team"
+[0m14:45:05.878500 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:45:05.888799 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: COMMIT
+[0m14:45:05.889168 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:45:05.889438 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: COMMIT
+[0m14:45:06.357725 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m14:45:06.363776 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:45:06.364393 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+drop view if exists "dbtaws"."public"."promotional_team__dbt_backup" cascade
+[0m14:45:06.594044 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m14:45:06.599564 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (execute): 2023-07-26 14:44:59.509294 => 2023-07-26 14:45:06.599374
+[0m14:45:06.600488 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: Close
+[0m14:45:06.603547 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b1e5006-01b7-406b-9960-1f86f8cd22ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fadfeb50>]}
+[0m14:45:06.604818 [info ] [Thread-1  ]: 2 of 3 OK created sql view model public.promotional_team ....................... [[32mCREATE VIEW[0m in 7.10s]
+[0m14:45:06.606011 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.promotional_team
+[0m14:45:06.609687 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_promotional
+[0m14:45:06.610878 [info ] [Thread-1  ]: 3 of 3 START sql table model public.products_promotional ....................... [RUN]
+[0m14:45:06.612503 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_promotional'
+[0m14:45:06.613012 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_promotional
+[0m14:45:06.619414 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_promotional"
+[0m14:45:06.620911 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (compile): 2023-07-26 14:45:06.613353 => 2023-07-26 14:45:06.620847
+[0m14:45:06.621178 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_promotional
+[0m14:45:06.688982 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_promotional"
+[0m14:45:06.689581 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:45:06.689746 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: BEGIN
+[0m14:45:06.689897 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:45:08.772446 [debug] [Thread-1  ]: SQL status: BEGIN in 2 seconds
+[0m14:45:08.773215 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:45:08.773619 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_promotional"} */
+
+  
+    
+
+  create  table "dbtaws"."public"."products_promotional__dbt_tmp"
+  as (
+    
+with products_promotional as (
+    select * from "dbtaws"."public"."products_team" products 
+    union
+    "dbtaws"."public"."promotional_team" promotional 
+
+)
+select * from products_promotional
+  );
+  
+[0m14:45:09.213732 [debug] [Thread-1  ]: Postgres adapter: Postgres error: syntax error at or near ""dbtaws""
+LINE 12:     "dbtaws"."public"."promotional_team" promotional 
+             ^
+
+[0m14:45:09.215270 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: ROLLBACK
+[0m14:45:09.460552 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (execute): 2023-07-26 14:45:06.621344 => 2023-07-26 14:45:09.460192
+[0m14:45:09.461937 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: Close
+[0m14:45:09.474197 [debug] [Thread-1  ]: Database Error in model products_promotional (models/dev/products_promotional.sql)
+  syntax error at or near ""dbtaws""
+  LINE 12:     "dbtaws"."public"."promotional_team" promotional 
+               ^
+  compiled Code at target/run/aws_orchestration/models/dev/products_promotional.sql
+[0m14:45:09.475109 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b1e5006-01b7-406b-9960-1f86f8cd22ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabccdf0>]}
+[0m14:45:09.475923 [error] [Thread-1  ]: 3 of 3 ERROR creating sql table model public.products_promotional .............. [[31mERROR[0m in 2.86s]
+[0m14:45:09.476769 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_promotional
+[0m14:45:09.479087 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:45:09.479648 [debug] [MainThread]: Using postgres connection "master"
+[0m14:45:09.480067 [debug] [MainThread]: On master: BEGIN
+[0m14:45:09.480465 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:45:12.215326 [debug] [MainThread]: SQL status: BEGIN in 3 seconds
+[0m14:45:12.217317 [debug] [MainThread]: On master: COMMIT
+[0m14:45:12.218237 [debug] [MainThread]: Using postgres connection "master"
+[0m14:45:12.218770 [debug] [MainThread]: On master: COMMIT
+[0m14:45:12.927619 [debug] [MainThread]: SQL status: COMMIT in 1 seconds
+[0m14:45:12.930754 [debug] [MainThread]: On master: Close
+[0m14:45:12.933619 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:45:12.934378 [debug] [MainThread]: Connection 'model.aws_orchestration.products_promotional' was properly closed.
+[0m14:45:12.935143 [info ] [MainThread]: 
+[0m14:45:12.936548 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 35.50 seconds (35.50s).
+[0m14:45:12.937951 [debug] [MainThread]: Command end result
+[0m14:45:12.951381 [info ] [MainThread]: 
+[0m14:45:12.952225 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m14:45:12.952835 [info ] [MainThread]: 
+[0m14:45:12.953409 [error] [MainThread]: [33mDatabase Error in model products_promotional (models/dev/products_promotional.sql)[0m
+[0m14:45:12.953897 [error] [MainThread]:   syntax error at or near ""dbtaws""
+[0m14:45:12.954341 [error] [MainThread]:   LINE 12:     "dbtaws"."public"."promotional_team" promotional 
+[0m14:45:12.954772 [error] [MainThread]:                ^
+[0m14:45:12.955260 [error] [MainThread]:   compiled Code at target/run/aws_orchestration/models/dev/products_promotional.sql
+[0m14:45:12.955780 [info ] [MainThread]: 
+[0m14:45:12.956273 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
+[0m14:45:12.956956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fae35e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabccd60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78fabcc160>]}
+[0m14:45:12.957503 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-26 14:46:39.775329 | 727a67cf-97d2-4b5a-aaf3-96c54c7ad515 ==============================
+[0m14:46:39.775329 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:46:39.777238 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/OFFISONG/Desktop/DATA2BOTS/d2b-orchestrate-aws-dbt/profiles', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:46:39.777430 [debug] [MainThread]: Tracking: tracking
+[0m14:46:39.806056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92acdbbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa928f79fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92ad13b50>]}
+[0m14:46:39.816036 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:46:39.842472 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:46:39.842837 [debug] [MainThread]: Partial parsing: updated file: aws_orchestration://models/dev/products_promotional.sql
+[0m14:46:39.855052 [debug] [MainThread]: 1699: static parser successfully parsed dev/products_promotional.sql
+[0m14:46:39.867252 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.aws_orchestration.example
+[0m14:46:39.871229 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '727a67cf-97d2-4b5a-aaf3-96c54c7ad515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92aed00d0>]}
+[0m14:46:39.876357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '727a67cf-97d2-4b5a-aaf3-96c54c7ad515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92aeaae50>]}
+[0m14:46:39.876624 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics
+[0m14:46:39.876851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '727a67cf-97d2-4b5a-aaf3-96c54c7ad515', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92aeaaf10>]}
+[0m14:46:39.877832 [info ] [MainThread]: 
+[0m14:46:39.879078 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:46:39.880664 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws'
+[0m14:46:39.889351 [debug] [ThreadPool]: Using postgres connection "list_dbtaws"
+[0m14:46:39.889632 [debug] [ThreadPool]: On list_dbtaws: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:46:39.889800 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:46:43.816613 [debug] [ThreadPool]: SQL status: SELECT 4 in 4 seconds
+[0m14:46:43.823428 [debug] [ThreadPool]: On list_dbtaws: Close
+[0m14:46:43.826303 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:46:43.826788 [debug] [MainThread]: Connection 'list_dbtaws' was properly closed.
+[0m14:46:43.827677 [info ] [MainThread]: 
+[0m14:46:43.829578 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 3.95 seconds (3.95s).
+[0m14:46:43.830390 [debug] [MainThread]: Flushing usage events
+[0m14:46:45.339229 [info ] [MainThread]: ctrl-c
+
+
+============================== 2023-07-26 14:47:10.636444 | 455638a3-413e-4c20-9435-817c6ffb5ccd ==============================
+[0m14:47:10.636444 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:47:10.638734 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/OFFISONG/Desktop/DATA2BOTS/d2b-orchestrate-aws-dbt/profiles', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['products_promotional'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:47:10.639021 [debug] [MainThread]: Tracking: tracking
+[0m14:47:10.664219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad097ddc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad098d190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad098d100>]}
+[0m14:47:10.674129 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:47:10.701525 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:47:10.701777 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:47:10.702413 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.aws_orchestration.example
+[0m14:47:10.707283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '455638a3-413e-4c20-9435-817c6ffb5ccd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac245c0d0>]}
+[0m14:47:10.711835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '455638a3-413e-4c20-9435-817c6ffb5ccd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad0a20550>]}
+[0m14:47:10.712101 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics
+[0m14:47:10.712337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '455638a3-413e-4c20-9435-817c6ffb5ccd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad0a206d0>]}
+[0m14:47:10.713413 [info ] [MainThread]: 
+[0m14:47:10.714879 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:47:10.715822 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws'
+[0m14:47:10.724141 [debug] [ThreadPool]: Using postgres connection "list_dbtaws"
+[0m14:47:10.724378 [debug] [ThreadPool]: On list_dbtaws: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:47:10.724539 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:47:16.098432 [debug] [ThreadPool]: SQL status: SELECT 4 in 5 seconds
+[0m14:47:16.102313 [debug] [ThreadPool]: On list_dbtaws: Close
+[0m14:47:16.105737 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws_public'
+[0m14:47:16.116117 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:47:16.116490 [debug] [ThreadPool]: On list_dbtaws_public: BEGIN
+[0m14:47:16.116805 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:47:20.463596 [debug] [ThreadPool]: SQL status: BEGIN in 4 seconds
+[0m14:47:20.465134 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:47:20.466031 [debug] [ThreadPool]: On list_dbtaws_public: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws_public"} */
+select
+      'dbtaws' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dbtaws' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m14:47:20.692345 [debug] [ThreadPool]: SQL status: SELECT 3 in 0 seconds
+[0m14:47:20.698632 [debug] [ThreadPool]: On list_dbtaws_public: ROLLBACK
+[0m14:47:21.151562 [debug] [ThreadPool]: On list_dbtaws_public: Close
+[0m14:47:21.170723 [debug] [MainThread]: Using postgres connection "master"
+[0m14:47:21.171334 [debug] [MainThread]: On master: BEGIN
+[0m14:47:21.171732 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:47:23.620140 [debug] [MainThread]: SQL status: BEGIN in 2 seconds
+[0m14:47:23.622230 [debug] [MainThread]: Using postgres connection "master"
+[0m14:47:23.623195 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:47:24.135020 [debug] [MainThread]: SQL status: SELECT 2 in 1 seconds
+[0m14:47:24.140664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '455638a3-413e-4c20-9435-817c6ffb5ccd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad09a3d60>]}
+[0m14:47:24.142246 [debug] [MainThread]: On master: ROLLBACK
+[0m14:47:24.824691 [debug] [MainThread]: Using postgres connection "master"
+[0m14:47:24.826840 [debug] [MainThread]: On master: BEGIN
+[0m14:47:26.097626 [debug] [MainThread]: SQL status: BEGIN in 1 seconds
+[0m14:47:26.099904 [debug] [MainThread]: On master: COMMIT
+[0m14:47:26.100962 [debug] [MainThread]: Using postgres connection "master"
+[0m14:47:26.101929 [debug] [MainThread]: On master: COMMIT
+[0m14:47:26.327426 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:47:26.328994 [debug] [MainThread]: On master: Close
+[0m14:47:26.331750 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:47:26.332845 [info ] [MainThread]: 
+[0m14:47:26.343095 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_promotional
+[0m14:47:26.345030 [info ] [Thread-1  ]: 1 of 1 START sql table model public.products_promotional ....................... [RUN]
+[0m14:47:26.346580 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_promotional'
+[0m14:47:26.347132 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_promotional
+[0m14:47:26.353665 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_promotional"
+[0m14:47:26.354808 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (compile): 2023-07-26 14:47:26.347583 => 2023-07-26 14:47:26.354646
+[0m14:47:26.355309 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_promotional
+[0m14:47:26.409626 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_promotional"
+[0m14:47:26.410272 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:47:26.410466 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: BEGIN
+[0m14:47:26.410633 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:47:33.793226 [debug] [Thread-1  ]: SQL status: BEGIN in 7 seconds
+[0m14:47:33.795463 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:47:33.796182 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_promotional"} */
+
+  
+    
+
+  create  table "dbtaws"."public"."products_promotional__dbt_tmp"
+  as (
+    
+with products_promotional as (
+    select * from "dbtaws"."public"."products_team"  
+    union
+    "dbtaws"."public"."promotional_team"  
+
+)
+select * from products_promotional
+  );
+  
+[0m14:47:34.024648 [debug] [Thread-1  ]: Postgres adapter: Postgres error: syntax error at or near ""dbtaws""
+LINE 12:     "dbtaws"."public"."promotional_team"  
+             ^
+
+[0m14:47:34.026201 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: ROLLBACK
+[0m14:47:34.250460 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (execute): 2023-07-26 14:47:26.355595 => 2023-07-26 14:47:34.249833
+[0m14:47:34.252343 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: Close
+[0m14:47:34.264748 [debug] [Thread-1  ]: Database Error in model products_promotional (models/dev/products_promotional.sql)
+  syntax error at or near ""dbtaws""
+  LINE 12:     "dbtaws"."public"."promotional_team"  
+               ^
+  compiled Code at target/run/aws_orchestration/models/dev/products_promotional.sql
+[0m14:47:34.265856 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '455638a3-413e-4c20-9435-817c6ffb5ccd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac0b820a0>]}
+[0m14:47:34.267688 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model public.products_promotional .............. [[31mERROR[0m in 7.92s]
+[0m14:47:34.270763 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_promotional
+[0m14:47:34.273238 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:47:34.273759 [debug] [MainThread]: Using postgres connection "master"
+[0m14:47:34.274113 [debug] [MainThread]: On master: BEGIN
+[0m14:47:34.274451 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:47:37.222200 [debug] [MainThread]: SQL status: BEGIN in 3 seconds
+[0m14:47:37.224718 [debug] [MainThread]: On master: COMMIT
+[0m14:47:37.225782 [debug] [MainThread]: Using postgres connection "master"
+[0m14:47:37.226832 [debug] [MainThread]: On master: COMMIT
+[0m14:47:37.461133 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:47:37.461942 [debug] [MainThread]: On master: Close
+[0m14:47:37.463704 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:47:37.464119 [debug] [MainThread]: Connection 'model.aws_orchestration.products_promotional' was properly closed.
+[0m14:47:37.464730 [info ] [MainThread]: 
+[0m14:47:37.465440 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 26.75 seconds (26.75s).
+[0m14:47:37.466374 [debug] [MainThread]: Command end result
+[0m14:47:37.477746 [info ] [MainThread]: 
+[0m14:47:37.478386 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m14:47:37.478902 [info ] [MainThread]: 
+[0m14:47:37.479412 [error] [MainThread]: [33mDatabase Error in model products_promotional (models/dev/products_promotional.sql)[0m
+[0m14:47:37.479947 [error] [MainThread]:   syntax error at or near ""dbtaws""
+[0m14:47:37.480407 [error] [MainThread]:   LINE 12:     "dbtaws"."public"."promotional_team"  
+[0m14:47:37.480773 [error] [MainThread]:                ^
+[0m14:47:37.481125 [error] [MainThread]:   compiled Code at target/run/aws_orchestration/models/dev/products_promotional.sql
+[0m14:47:37.481493 [info ] [MainThread]: 
+[0m14:47:37.481885 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m14:47:37.482691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad0a20160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ad09a3580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac0b99a60>]}
+[0m14:47:37.483281 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-07-26 14:57:43.682428 | 575a6785-8738-4f2c-84d5-b511bc8ca76c ==============================
+[0m14:57:43.682428 [info ] [MainThread]: Running with dbt=1.4.5
+[0m14:57:43.689230 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/OFFISONG/Desktop/DATA2BOTS/d2b-orchestrate-aws-dbt/profiles', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m14:57:43.689592 [debug] [MainThread]: Tracking: tracking
+[0m14:57:43.737093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa038ec8d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03a9766a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03a9b0a90>]}
+[0m14:57:43.746944 [debug] [MainThread]: checksum: e05dd7cee44d39ae8ac27965cacd8a6d8d0ab4e8185101e0db84e98f79bee0b6, vars: {}, profile: None, target: None, version: 1.4.5
+[0m14:57:43.773706 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:57:43.774086 [debug] [MainThread]: Partial parsing: updated file: aws_orchestration://models/dev/products_promotional.sql
+[0m14:57:43.785587 [debug] [MainThread]: 1699: static parser successfully parsed dev/products_promotional.sql
+[0m14:57:43.798421 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.aws_orchestration.example
+[0m14:57:43.802217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '575a6785-8738-4f2c-84d5-b511bc8ca76c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa290d0>]}
+[0m14:57:43.807569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '575a6785-8738-4f2c-84d5-b511bc8ca76c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa026d0>]}
+[0m14:57:43.807919 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 291 macros, 0 operations, 1 seed file, 0 sources, 0 exposures, 0 metrics
+[0m14:57:43.808162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '575a6785-8738-4f2c-84d5-b511bc8ca76c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa02640>]}
+[0m14:57:43.809191 [info ] [MainThread]: 
+[0m14:57:43.810483 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:57:43.811409 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws'
+[0m14:57:43.819379 [debug] [ThreadPool]: Using postgres connection "list_dbtaws"
+[0m14:57:43.819634 [debug] [ThreadPool]: On list_dbtaws: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:57:43.819818 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:57:48.651846 [debug] [ThreadPool]: SQL status: SELECT 4 in 5 seconds
+[0m14:57:48.660858 [debug] [ThreadPool]: On list_dbtaws: Close
+[0m14:57:48.665120 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dbtaws_public'
+[0m14:57:48.676825 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:57:48.677273 [debug] [ThreadPool]: On list_dbtaws_public: BEGIN
+[0m14:57:48.677671 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:57:51.461806 [debug] [ThreadPool]: SQL status: BEGIN in 3 seconds
+[0m14:57:51.464247 [debug] [ThreadPool]: Using postgres connection "list_dbtaws_public"
+[0m14:57:51.465284 [debug] [ThreadPool]: On list_dbtaws_public: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "list_dbtaws_public"} */
+select
+      'dbtaws' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dbtaws' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m14:57:51.702555 [debug] [ThreadPool]: SQL status: SELECT 3 in 0 seconds
+[0m14:57:51.708772 [debug] [ThreadPool]: On list_dbtaws_public: ROLLBACK
+[0m14:57:51.946871 [debug] [ThreadPool]: On list_dbtaws_public: Close
+[0m14:57:51.965468 [debug] [MainThread]: Using postgres connection "master"
+[0m14:57:51.966179 [debug] [MainThread]: On master: BEGIN
+[0m14:57:51.966648 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:57:54.226976 [debug] [MainThread]: SQL status: BEGIN in 2 seconds
+[0m14:57:54.238948 [debug] [MainThread]: Using postgres connection "master"
+[0m14:57:54.240365 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:57:54.475001 [debug] [MainThread]: SQL status: SELECT 2 in 0 seconds
+[0m14:57:54.479575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '575a6785-8738-4f2c-84d5-b511bc8ca76c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa54cd0>]}
+[0m14:57:54.495206 [debug] [MainThread]: On master: ROLLBACK
+[0m14:57:54.724484 [debug] [MainThread]: Using postgres connection "master"
+[0m14:57:54.726396 [debug] [MainThread]: On master: BEGIN
+[0m14:57:55.157608 [debug] [MainThread]: SQL status: BEGIN in 0 seconds
+[0m14:57:55.159713 [debug] [MainThread]: On master: COMMIT
+[0m14:57:55.160952 [debug] [MainThread]: Using postgres connection "master"
+[0m14:57:55.162069 [debug] [MainThread]: On master: COMMIT
+[0m14:57:55.379421 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:57:55.381512 [debug] [MainThread]: On master: Close
+[0m14:57:55.385117 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:57:55.386217 [info ] [MainThread]: 
+[0m14:57:55.395709 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_team
+[0m14:57:55.396624 [info ] [Thread-1  ]: 1 of 3 START sql view model public.products_team ............................... [RUN]
+[0m14:57:55.398432 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_team'
+[0m14:57:55.399083 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_team
+[0m14:57:55.407871 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_team"
+[0m14:57:55.409969 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (compile): 2023-07-26 14:57:55.399504 => 2023-07-26 14:57:55.409640
+[0m14:57:55.410472 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_team
+[0m14:57:55.463294 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_team"
+[0m14:57:55.464041 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:57:55.464229 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: BEGIN
+[0m14:57:55.464397 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:57:57.585611 [debug] [Thread-1  ]: SQL status: BEGIN in 2 seconds
+[0m14:57:57.588833 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:57:57.589754 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+
+  create view "dbtaws"."public"."products_team__dbt_tmp" as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with products_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team = 'Products'
+
+)
+
+select * from products_team
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+[0m14:57:57.830140 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m14:57:57.845062 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:57:57.845613 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+alter table "dbtaws"."public"."products_team" rename to "products_team__dbt_backup"
+[0m14:57:58.085910 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:57:58.100942 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:57:58.101618 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+alter table "dbtaws"."public"."products_team__dbt_tmp" rename to "products_team"
+[0m14:57:58.323869 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:57:58.352196 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: COMMIT
+[0m14:57:58.352590 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:57:58.352785 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: COMMIT
+[0m14:57:58.570037 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m14:57:58.586433 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_team"
+[0m14:57:58.586965 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_team"} */
+drop view if exists "dbtaws"."public"."products_team__dbt_backup" cascade
+[0m14:57:58.810769 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m14:57:58.818220 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_team (execute): 2023-07-26 14:57:55.410762 => 2023-07-26 14:57:58.817804
+[0m14:57:58.819292 [debug] [Thread-1  ]: On model.aws_orchestration.products_team: Close
+[0m14:57:58.821124 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '575a6785-8738-4f2c-84d5-b511bc8ca76c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa81df0>]}
+[0m14:57:58.823697 [info ] [Thread-1  ]: 1 of 3 OK created sql view model public.products_team .......................... [[32mCREATE VIEW[0m in 3.42s]
+[0m14:57:58.826338 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_team
+[0m14:57:58.826963 [debug] [Thread-1  ]: Began running node model.aws_orchestration.promotional_team
+[0m14:57:58.827681 [info ] [Thread-1  ]: 2 of 3 START sql view model public.promotional_team ............................ [RUN]
+[0m14:57:58.828867 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.promotional_team'
+[0m14:57:58.829297 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.promotional_team
+[0m14:57:58.834233 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.promotional_team"
+[0m14:57:58.835393 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (compile): 2023-07-26 14:57:58.829582 => 2023-07-26 14:57:58.835270
+[0m14:57:58.835805 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.promotional_team
+[0m14:57:58.842474 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.promotional_team"
+[0m14:57:58.843256 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:57:58.843497 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: BEGIN
+[0m14:57:58.843730 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:58:00.874648 [debug] [Thread-1  ]: SQL status: BEGIN in 2 seconds
+[0m14:58:00.876481 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:58:00.877337 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+
+  create view "dbtaws"."public"."promotional_team__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+
+
+
+with promotional_team as (
+
+    select * from "dbtaws"."public"."bi_budget_csv" where team='Promotional'
+
+)
+
+select * from promotional_team
+  );
+[0m14:58:01.117289 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0 seconds
+[0m14:58:01.133768 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:58:01.134726 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+alter table "dbtaws"."public"."promotional_team" rename to "promotional_team__dbt_backup"
+[0m14:58:01.356034 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:58:01.366957 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:58:01.367482 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+alter table "dbtaws"."public"."promotional_team__dbt_tmp" rename to "promotional_team"
+[0m14:58:01.595525 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:58:01.608387 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: COMMIT
+[0m14:58:01.609263 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:58:01.609656 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: COMMIT
+[0m14:58:01.834924 [debug] [Thread-1  ]: SQL status: COMMIT in 0 seconds
+[0m14:58:01.841125 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.promotional_team"
+[0m14:58:01.841631 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.promotional_team"} */
+drop view if exists "dbtaws"."public"."promotional_team__dbt_backup" cascade
+[0m14:58:02.109234 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0 seconds
+[0m14:58:02.112879 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.promotional_team (execute): 2023-07-26 14:57:58.836062 => 2023-07-26 14:58:02.112693
+[0m14:58:02.113784 [debug] [Thread-1  ]: On model.aws_orchestration.promotional_team: Close
+[0m14:58:02.116047 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '575a6785-8738-4f2c-84d5-b511bc8ca76c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa81ca0>]}
+[0m14:58:02.117070 [info ] [Thread-1  ]: 2 of 3 OK created sql view model public.promotional_team ....................... [[32mCREATE VIEW[0m in 3.29s]
+[0m14:58:02.118064 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.promotional_team
+[0m14:58:02.119716 [debug] [Thread-1  ]: Began running node model.aws_orchestration.products_promotional
+[0m14:58:02.120497 [info ] [Thread-1  ]: 3 of 3 START sql table model public.products_promotional ....................... [RUN]
+[0m14:58:02.121686 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.aws_orchestration.products_promotional'
+[0m14:58:02.122191 [debug] [Thread-1  ]: Began compiling node model.aws_orchestration.products_promotional
+[0m14:58:02.129038 [debug] [Thread-1  ]: Writing injected SQL for node "model.aws_orchestration.products_promotional"
+[0m14:58:02.130623 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (compile): 2023-07-26 14:58:02.122525 => 2023-07-26 14:58:02.130468
+[0m14:58:02.131190 [debug] [Thread-1  ]: Began executing node model.aws_orchestration.products_promotional
+[0m14:58:02.209587 [debug] [Thread-1  ]: Writing runtime sql for node "model.aws_orchestration.products_promotional"
+[0m14:58:02.210387 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:58:02.210537 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: BEGIN
+[0m14:58:02.210674 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:58:05.753242 [debug] [Thread-1  ]: SQL status: BEGIN in 4 seconds
+[0m14:58:05.755751 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:58:05.756592 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_promotional"} */
+
+  
+    
+
+  create  table "dbtaws"."public"."products_promotional__dbt_tmp"
+  as (
+    
+with products as (
+    select * from "dbtaws"."public"."products_team"  limit 100
+
+),
+promotional as (
+    select * from "dbtaws"."public"."promotional_team"  limit 100
+
+),
+products_promotional as (
+    select * from products union select * from promotional
+)
+
+select * from products_promotional
+  );
+  
+[0m14:58:06.002548 [debug] [Thread-1  ]: SQL status: SELECT 200 in 0 seconds
+[0m14:58:06.019312 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:58:06.020353 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_promotional"} */
+alter table "dbtaws"."public"."products_promotional__dbt_tmp" rename to "products_promotional"
+[0m14:58:06.471341 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0 seconds
+[0m14:58:06.481768 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: COMMIT
+[0m14:58:06.482184 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:58:06.482502 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: COMMIT
+[0m14:58:07.231689 [debug] [Thread-1  ]: SQL status: COMMIT in 1 seconds
+[0m14:58:07.244587 [debug] [Thread-1  ]: Using postgres connection "model.aws_orchestration.products_promotional"
+[0m14:58:07.245585 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: /* {"app": "dbt", "dbt_version": "1.4.5", "profile_name": "orchestrate_aws", "target_name": "dev", "node_id": "model.aws_orchestration.products_promotional"} */
+drop table if exists "dbtaws"."public"."products_promotional__dbt_backup" cascade
+[0m14:58:07.475936 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0 seconds
+[0m14:58:07.481703 [debug] [Thread-1  ]: Timing info for model.aws_orchestration.products_promotional (execute): 2023-07-26 14:58:02.131585 => 2023-07-26 14:58:07.481497
+[0m14:58:07.482612 [debug] [Thread-1  ]: On model.aws_orchestration.products_promotional: Close
+[0m14:58:07.485227 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '575a6785-8738-4f2c-84d5-b511bc8ca76c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa028921fd0>]}
+[0m14:58:07.486392 [info ] [Thread-1  ]: 3 of 3 OK created sql table model public.products_promotional .................. [[32mSELECT 200[0m in 5.36s]
+[0m14:58:07.487351 [debug] [Thread-1  ]: Finished running node model.aws_orchestration.products_promotional
+[0m14:58:07.490044 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:58:07.490897 [debug] [MainThread]: Using postgres connection "master"
+[0m14:58:07.491354 [debug] [MainThread]: On master: BEGIN
+[0m14:58:07.491772 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:58:10.984890 [debug] [MainThread]: SQL status: BEGIN in 3 seconds
+[0m14:58:10.986921 [debug] [MainThread]: On master: COMMIT
+[0m14:58:10.987858 [debug] [MainThread]: Using postgres connection "master"
+[0m14:58:10.988524 [debug] [MainThread]: On master: COMMIT
+[0m14:58:11.214371 [debug] [MainThread]: SQL status: COMMIT in 0 seconds
+[0m14:58:11.216557 [debug] [MainThread]: On master: Close
+[0m14:58:11.219243 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:58:11.220217 [debug] [MainThread]: Connection 'model.aws_orchestration.products_promotional' was properly closed.
+[0m14:58:11.221037 [info ] [MainThread]: 
+[0m14:58:11.221764 [info ] [MainThread]: Finished running 2 view models, 1 table model in 0 hours 0 minutes and 27.41 seconds (27.41s).
+[0m14:58:11.222707 [debug] [MainThread]: Command end result
+[0m14:58:11.234953 [info ] [MainThread]: 
+[0m14:58:11.235752 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:58:11.236388 [info ] [MainThread]: 
+[0m14:58:11.236960 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m14:58:11.237554 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa028a264c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa63d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa03aa63dc0>]}
+[0m14:58:11.238043 [debug] [MainThread]: Flushing usage events

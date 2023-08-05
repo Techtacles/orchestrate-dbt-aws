@@ -1,0 +1,27 @@
+schedules:
+  - name: products_team
+    cron_schedule: "*/30 * ? * * *"
+    description: "Refresh Amazon models in products team model every 30 mins"
+
+
+  - name: promotional_team
+    cron_schedule: "0 * ? * * *"
+    description: "Refresh Amazon models in promotional team model every hour"
+
+  - name: products_promotional
+    cron_schedule: "0 0/2 ? * * *"
+    description: "Refresh Amazon models in products_promotional model every 2 hours"
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
